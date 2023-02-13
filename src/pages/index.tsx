@@ -4,6 +4,10 @@ import Banner from "@/components/Banner";
 import requests from "utils/request";
 import { Movie } from "global";
 import Row from "@/components/Row";
+import useAuth from "@/hooks/useAuth";
+import { useRecoilValue } from "recoil";
+import { modalState } from "@/atom/modalAtom";
+import Modal from "@/components/Modal";
 
 interface Props {
   netflixOriginals: Movie[];
@@ -26,6 +30,9 @@ export default function Home({
   topRated,
   trendingNow,
 }: Props) {
+  const { loading } = useAuth();
+  const showModal = useRecoilValue(modalState);
+  if (loading) return null;
   return (
     <div className="relative h-screen bg-gradient-to-b lg:h-[140vh]">
       <Head>
@@ -47,6 +54,7 @@ export default function Home({
           <Row title="Documentaries" movies={documentaries} />
         </section>
       </main>
+      {showModal && <Modal/>}
     </div>
   );
 }

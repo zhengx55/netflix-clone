@@ -6,8 +6,11 @@ import {
   UserCircleIcon,
 } from "@heroicons/react/24/solid";
 import Link from "next/link";
+import useAuth from "@/hooks/useAuth";
 function Header() {
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
+  const { logOut } = useAuth();
+
   useEffect(() => {
     const handleScroll = () => {
       window.scrollY > 0 ? setIsScrolled(true) : setIsScrolled(false);

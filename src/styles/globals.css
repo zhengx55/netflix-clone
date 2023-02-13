@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,7 +6,7 @@
 /* html body */
 @layer base {
     body {
-        @apply bg-[#141414] text-white !scrollbar-track-transparent !scrollbar-thumb-white !scrollbar-thin;
+        @apply font-Oxygen bg-[#141414] text-white !scrollbar-track-transparent !scrollbar-thumb-white !scrollbar-thin;
     }
 
     header {
@@ -23,5 +24,8 @@
     }
     .input{
         @apply w-full rounded-sm bg-[#333] px-5 py-3.5 placeholder-[gray] outline-none focus:bg-[#454545]; 
+    }
+    .modalButton {
+        @apply flex w-11 h-11 items-center justify-center rounded-full border-2 border-[gray] bg-[#2a2a21]/60 transition hover:border-white hover:bg-white/50;
     }
 }
