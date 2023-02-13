@@ -1,11 +1,8 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import {
-  BellIcon,
-  DocumentMagnifyingGlassIcon,
-} from "@heroicons/react/24/solid";
+import { BellIcon, MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
-function Header() {
+ function Header() {
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
   useEffect(() => {
     const handleScroll = () => {
@@ -13,7 +10,7 @@ function Header() {
     };
     window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener("scroll", handleScroll); 
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
   return (
@@ -35,7 +32,7 @@ function Header() {
         </ul>
       </div>
       <div className="flex items-center space-x-4 text-sm font-light">
-        <DocumentMagnifyingGlassIcon className="hidden sm:inline h-6 w-6 " />
+        <MagnifyingGlassIcon className="hidden sm:inline h-6 w-6 " />
         <p className="hidden lg:inline">Kids</p>
         <BellIcon className="h-6 w-6 " />
         <Link href={"/accounts"}>
