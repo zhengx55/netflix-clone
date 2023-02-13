@@ -1,8 +1,12 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import { BellIcon, MagnifyingGlassIcon } from "@heroicons/react/24/solid";
+import {
+  BellIcon,
+  MagnifyingGlassIcon,
+  UserCircleIcon,
+} from "@heroicons/react/24/solid";
 import Link from "next/link";
- function Header() {
+function Header() {
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
   useEffect(() => {
     const handleScroll = () => {
@@ -36,11 +40,7 @@ import Link from "next/link";
         <p className="hidden lg:inline">Kids</p>
         <BellIcon className="h-6 w-6 " />
         <Link href={"/accounts"}>
-          <img
-            src="https://rb.gy/glpwyx"
-            alt="account"
-            className="cursor-pointer rounded-sm"
-          />
+          <UserCircleIcon className="cursor-pointer rounded-sm w-6 h-7" />
         </Link>
       </div>
     </header>
